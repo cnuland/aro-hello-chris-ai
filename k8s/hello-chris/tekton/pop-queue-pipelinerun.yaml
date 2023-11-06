@@ -1,0 +1,24 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: pop-queue-build
+spec:
+  pipelineRef:
+    name: pop-queue-pipeline
+  params:
+  - name: deployment-name
+    value: "pop-queue"
+  - name: git-url
+    value: "https://github.com/cnuland/azure-bus-python.git"
+  - name: git-revision
+    value: "main"
+  - name: IMAGE
+    value: "image-registry.openshift-image-registry.svc:5000/pipeline-test/pop-queue"
+  - name: TLSVERIFY
+    value: "false"
+  - name: working-dir
+    value: "./"
+  workspaces:
+  - name: shared-workspace
+    persistentvolumeclaim:
+      claimName: tekton-pvc

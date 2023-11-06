@@ -1,0 +1,29 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledJob
+metadata:
+  name: azure-bus-trigger
+  namespace: hello-chris
+spec:
+  jobTargetRef:
+    template:
+      spec:
+        containers:
+        - name: pop-queue
+          image: image-registry.openshift-image-registry.svc:5000/pipeline-test/pop-queue
+          command: ["python",  "pop-queue.py"]
+          env:
+          - name: CONNECTION_STRING
+            valueFrom:
+              secretKeyRef:
+                name: namespace-secret
+                key: connection
+        restartPolicy: OnFailure 
+    backoffLimit: 4  
+  triggers:
+  - type: azure-servicebus
+    metadata:
+      queueName: test
+      messageCount: "1"
+    authenticationRef:
+        # reference to TriggerAuthentication
+        name: azure-servicebus-auth

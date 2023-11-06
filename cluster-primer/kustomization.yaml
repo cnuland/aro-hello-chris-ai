@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- namespace/openshift-gitops-operator.yaml
+- namespace/openshift-keda-operator.yaml
+- namespace/external-secrets.yaml
+- operator/openshift-gitops-operator.yaml
+- gitops/app-of-apps.yaml
+- gitops/app/hello-chris.yaml
+- ignored/azure-secret.yaml
+
