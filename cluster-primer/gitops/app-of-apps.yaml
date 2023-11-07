@@ -10,7 +10,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: k8s/apps
-    repoURL: 'https://github.com/cnuland/aro-hello-chris-tekton-chains.git'
+    repoURL: 'https://github.com/cnuland/aro-hello-chris-ao.git'
     targetRevision: HEAD
     directory:
       recurse: false
