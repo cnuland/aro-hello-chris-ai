@@ -11,6 +11,10 @@ spec:
     kind: "ScaledJob"
     jsonPointers:
     - /metadata/labels
+  - group: "*"
+    kind: "TriggerAuthentication"
+    jsonPointers:
+    - /metadata/labels
   destination:
     name: ''
     namespace: '*'
