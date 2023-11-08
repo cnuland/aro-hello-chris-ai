@@ -2,6 +2,7 @@ apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
   name: pop-queue-build
+  namespace: hello-chris
 spec:
   pipelineRef:
     name: pop-queue-pipeline

@@ -2,6 +2,7 @@ apiVersion: tekton.dev/v1alpha1
 kind: Pipeline
 metadata:
   name: pop-queue-pipeline
+  namespace: hello-chris
 spec:
   workspaces:
   - name: shared-workspace

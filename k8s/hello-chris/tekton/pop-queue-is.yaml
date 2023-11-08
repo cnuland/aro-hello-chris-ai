@@ -4,3 +4,4 @@ metadata:
   labels:
     application: pop-queue
   name: pop-queue
+  namespace: hello-chris
