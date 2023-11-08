@@ -1,24 +1,25 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hello-chris
+  name: service-bus-trigger
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "4"
+    argocd.argoproj.io/sync-wave: "5"
+
 spec:
   destination:
     name: ''
     namespace: '*'
     server: 'https://kubernetes.default.svc'
   source:
-    path: k8s/hello-chris
+    path: k8s/hello-chris/keda
     repoURL: 'https://github.com/cnuland/aro-hello-chris-ai.git'
     targetRevision: HEAD
     directory:
-      recurse: true
+      recurse: false
   sources: []
   project: default
   syncPolicy:
     automated:
-      prune: true
+      prune: false
       selfHeal: true
