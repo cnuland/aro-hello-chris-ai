@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: pipelines
+  name: weaviate
   namespace: openshift-gitops
   annotations:
     argocd.argoproj.io/sync-wave: "2"
