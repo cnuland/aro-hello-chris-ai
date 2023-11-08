@@ -6,6 +6,11 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "5"
 spec:
+  ignoreDifferences:
+  - group: "*"
+    kind: "ScaledJob"
+    jsonPointers:
+    - /metadata/labels
   destination:
     name: ''
     namespace: '*'

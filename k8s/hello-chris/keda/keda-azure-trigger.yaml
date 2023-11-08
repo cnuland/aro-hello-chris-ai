@@ -3,8 +3,6 @@ kind: ScaledJob
 metadata:
   name: azure-bus-trigger
   namespace: hello-chris
-  labels:
-     app.kubernetes.io/instance: hello-chris
 spec:
   jobTargetRef:
     template:

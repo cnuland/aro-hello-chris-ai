@@ -3,8 +3,6 @@ kind: TriggerAuthentication
 metadata:
   name: azure-servicebus-auth
   namespace: hello-chris
-  labels:
-     app.kubernetes.io/instance: hello-chris
 spec:
   secretTargetRef:
     - key: connection
