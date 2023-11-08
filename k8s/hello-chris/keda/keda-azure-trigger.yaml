@@ -12,6 +12,8 @@ spec:
           image: quay.io/cnuland/azure-pop-queue
           command: ["python",  "pop-queue.py"]
           env:
+          - name: WEAVIATE_URL
+            value: "https://weaviate-weaviate.apps.i20vwjms.eastus.aroapp.io/"
           - name: CONNECTION_STRING
             valueFrom:
               secretKeyRef:

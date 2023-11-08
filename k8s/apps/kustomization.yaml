@@ -11,4 +11,5 @@ resources:
 - infra/weaviate.yaml
 - rbac/cluster-role-gitops.yaml
 - rbac/cluster-rolebinding-gitops.yaml
+- rbac/cluster-rolebinding-weaviate.yaml
 - rbac/cluster-role-priviledged.yaml
