@@ -1,3 +1,6 @@
 azure-servicebus
 azure-identity
 aiohttp
+weaviate-client
+python-dotenv
+gradio
