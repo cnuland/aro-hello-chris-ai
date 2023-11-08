@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pipelines
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+
+spec:
+  destination:
+    name: ''
+    namespace: '*'
+    server: 'https://kubernetes.default.svc'
+  source:
+    chart: weaviate
+    repoURL: https://weaviate.github.io/weaviate-helm
+    targetRevision: 16.7.0
+    helm:
+      releaseName: weaviate
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
