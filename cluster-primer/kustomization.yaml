@@ -5,6 +5,7 @@ resources:
 - namespace/openshift-gitops-operator.yaml
 - namespace/openshift-keda-operator.yaml
 - namespace/external-secrets.yaml
+- namespace/weaviate.yaml
 - operator/openshift-gitops-operator.yaml
 - gitops/app-of-apps.yaml
 - ignored/azure-secret.yaml
