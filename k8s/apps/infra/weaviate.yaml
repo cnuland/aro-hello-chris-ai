@@ -9,7 +9,7 @@ metadata:
 spec:
   destination:
     name: ''
-    namespace: '*'
+    namespace: 'weaviate'
     server: 'https://kubernetes.default.svc'
   source:
     chart: weaviate
