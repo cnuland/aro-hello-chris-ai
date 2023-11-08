@@ -5,8 +5,12 @@ metadata:
   namespace: openshift-gitops
   annotations:
     argocd.argoproj.io/sync-wave: "5"
-
 spec:
+  ignoreDifferences:
+  - group: "apps"
+    kind: "ScaledJob"
+    jsonPointers:
+    - /metadata/labels
   destination:
     name: ''
     namespace: '*'
@@ -20,6 +24,8 @@ spec:
   sources: []
   project: default
   syncPolicy:
+    syncOptions:
+    - RespectIgnoreDifferences=true
     automated:
       prune: false
       selfHeal: true
