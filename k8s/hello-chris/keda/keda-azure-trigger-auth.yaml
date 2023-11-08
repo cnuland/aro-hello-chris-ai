@@ -6,5 +6,5 @@ metadata:
 spec:
   secretTargetRef:
     - key: connection
-      name: connection-string2 # name of secret
+      name: connection-string # name of secret
       parameter: connection # key in secret

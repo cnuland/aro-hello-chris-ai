@@ -15,8 +15,8 @@ spec:
           - name: CONNECTION_STRING
             valueFrom:
               secretKeyRef:
-                name: connection-string2
-                key: connection-string
+                name: connection-string
+                key: connection
         restartPolicy: OnFailure 
     backoffLimit: 4  
   triggers:
