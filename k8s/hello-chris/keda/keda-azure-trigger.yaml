@@ -9,7 +9,7 @@ spec:
       spec:
         containers:
         - name: pop-queue
-          image: image-registry.openshift-image-registry.svc:5000/pipeline-test/pop-queue
+          image: quay.io/cnuland/azure-pop-queue
           command: ["python",  "pop-queue.py"]
           env:
           - name: CONNECTION_STRING

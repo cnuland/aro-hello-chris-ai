@@ -4,6 +4,7 @@ metadata:
   name: pop-queue-build
   namespace: hello-chris
 spec:
+  serviceAccountName: pipeline
   pipelineRef:
     name: pop-queue-pipeline
   params:
@@ -14,7 +15,7 @@ spec:
   - name: git-revision
     value: "main"
   - name: IMAGE
-    value: "image-registry.openshift-image-registry.svc:5000/pipeline-test/pop-queue"
+    value: "quay.io/cnuland/azure-pop-queue"
   - name: TLSVERIFY
     value: "false"
   - name: working-dir

@@ -12,3 +12,7 @@ If using an external secret operator you will need the initial service principal
 ```
 az ad sp create-for-rbac --name myKeyVaultServicePrincipal --role reader --scopes /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>
 ```
+
+```
+oc create secret docker-registry dockerconfigjson --docker-server=quay.io --docker-username=<username> --docker-password=<pass> --docker-email=test@acme.com -n hello-chris
+```
