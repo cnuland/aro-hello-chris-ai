@@ -4,7 +4,6 @@ kind: Kustomization
 resources:
 - infra/pipelines.yaml
 - infra/external-secrets.yaml
-- infra/keda.yaml
 - app/hello-chris.yaml
 - argocd.yaml
 - infra/onboarding.yaml
