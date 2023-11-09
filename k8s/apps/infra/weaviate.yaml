@@ -19,7 +19,7 @@ spec:
       releaseName: weaviate
       parameters:
       - name: "modules.text2vec-openai.enabled"
-        value: true
+        value: "true"
   sources: []
   project: default
   syncPolicy:
