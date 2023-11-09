@@ -49,7 +49,6 @@ def weaviate_connection() -> weaviate.Client:
         url=WEAVIATE_URL,
         auth_client_secret=auth_config,
         additional_headers={
-            "X-HuggingFace-Api-Key": HUGGINGFACE_API_KEY,
             "X-OpenAI-Api-Key" : OPENAI_API_KEY}
         )
     else:
@@ -58,7 +57,6 @@ def weaviate_connection() -> weaviate.Client:
             embedded_options=EmbeddedOptions(),
             auth_client_secret=auth_config,
             additional_headers={
-            "X-HuggingFace-Api-Key": HUGGINGFACE_API_KEY,
             "X-OpenAI-Api-Key" : OPENAI_API_KEY}
         )
     
@@ -80,10 +78,8 @@ def import_questions(client: weaviate.Client) -> None:
     """
     class_obj = {
     "class": "Question",
-    "vectorizer": "text2vec-huggingface",
+    "vectorizer": "text2vec-openai",
     "moduleConfig": {
-        "text2vec-huggingface": {},
-        "model": "sentence-transformers/all-MiniLM-L6-v2",
         # Ensure the `generative-openai` module is used for generative queries
         "generative-openai": {
             "model": "gpt-3.5-turbo",  # Optional - Defaults to `gpt-3.5-turbo`
@@ -98,7 +94,7 @@ def import_questions(client: weaviate.Client) -> None:
     if client.schema.exists('Question'):
         logging.info("Question class already exists, skipping class creation.")
     else:
-        logging.info(f'\nCreating the Question class using the text2vec-huggingface vectorizer.')
+        logging.info(f'\nCreating the Question class using the text2vec-openai vectorizer.')
         client.schema.create_class(class_obj)
 
 
