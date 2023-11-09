@@ -17,6 +17,9 @@ spec:
     targetRevision: 16.7.0
     helm:
       releaseName: weaviate
+      parameters:
+      - name: "modules.text2vec-openai.enabled"
+        value: true
   sources: []
   project: default
   syncPolicy:
