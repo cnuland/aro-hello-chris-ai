@@ -15,11 +15,8 @@ logging.info('cluster.get_nodes_status(): %s', client.cluster.get_nodes_status()
 
 class_obj = {
     "class": "Question",
-    "vectorizer": "text2vec-huggingface",
+    "vectorizer": "text2vec-openai",
     "moduleConfig": {
-        "text2vec-huggingface": {},
-        "model": "sentence-transformers/all-MiniLM-L6-v2",
-        # Ensure the `generative-openai` module is used for generative queries
         "generative-openai": {
           "model": "gpt-3.5-turbo",  # Optional - Defaults to `gpt-3.5-turbo`
         }
@@ -33,7 +30,7 @@ class_obj = {
 if client.schema.exists('Question'):
     logging.info("Question class already exists, skipping class creation.")
 else:
-    logging.info(f'\nCreating the Question class using the text2vec-huggingface vectorizer.')
+    logging.info(f'\nCreating the Question class using the openai vectorizer.')
     client.schema.create_class(class_obj)
 QUEUE_NAME = "test"
 connection = os.getenv('CONNECTION_STRING')
