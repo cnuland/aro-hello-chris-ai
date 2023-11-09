@@ -11,7 +11,7 @@ spec:
   - name: deployment-name
     value: "pop-queue"
   - name: git-url
-    value: "https://github.com/cnuland/azure-bus-python.git"
+    value: "https://github.com/cnuland/aro-hello-chris-ai.git"
   - name: git-revision
     value: "main"
   - name: IMAGE
@@ -19,7 +19,7 @@ spec:
   - name: TLSVERIFY
     value: "false"
   - name: working-dir
-    value: "./"
+    value: "./apps"
   workspaces:
   - name: shared-workspace
     persistentvolumeclaim:
