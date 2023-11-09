@@ -9,7 +9,7 @@ spec:
       spec:
         containers:
         - name: pop-queue
-          image: quay.io/cnuland/azure-pop-queue:v4
+          image: quay.io/cnuland/azure-pop-queue:v5
           command: ["python",  "pop-queue.py"]
           env:
           - name: WEAVIATE_URL

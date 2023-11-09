@@ -50,7 +50,7 @@ async def run():
                     for msg in received_msgs:
                         print("Received: " + str(msg))
 
-                        data = json.loads(msg)  # Load data
+                        data = json.loads(str(msg))  # Load data
 
                         client.batch.configure(batch_size=100)  # Configure batch
                         with client.batch as batch:  # Initialize a batch process
